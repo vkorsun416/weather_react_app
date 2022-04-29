@@ -7,6 +7,7 @@ function ApiContext(props) {
 
     const [lat, setLat] = useState([]);
     const [long, setLong] = useState([]);
+    const [weatherData, setWeatherData] = useState([]);
 
     function getUserLocation() {
         navigator.geolocation.getCurrentPosition(position => {
@@ -15,11 +16,21 @@ function ApiContext(props) {
         });
     }
 
+    async function getWeatherData() {
+        await fetch(`${process.env.REACT_APP_WEATHER_API_URL}/forecast/?lat=${lat}&lon=${long}&appid=${process.env.REACT_APP_WEATHER_API_KEY}`)
+            .then(res => res.json())
+            .then(result => {
+                setWeatherData(result)
+            });
+    }
+
     return (
         <Context.Provider value={{
             lat,
             long,
+            weatherData,
             getUserLocation,
+            getWeatherData,
         }}>
             {children}
         </Context.Provider>
