@@ -1,6 +1,7 @@
 import React, {useContext, useEffect} from "react";
 import context from "./context/context";
 import Weather from "./components/Weather/Weather";
+import Loader from "./loader/Loader";
 
 function App() {
 
@@ -21,7 +22,7 @@ function App() {
 
     return (
         <>
-            {(weatherData.message === 0) ? (<Weather/>) : (<></>)}
+            {(weatherData.message === 0) ? (<Weather/>) : (<Loader></Loader>)}
         </>
     )
 }
