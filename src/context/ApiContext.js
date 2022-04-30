@@ -10,9 +10,14 @@ function ApiContext(props) {
     const [weatherData, setWeatherData] = useState([]);
 
     function getUserLocation() {
+
         navigator.geolocation.getCurrentPosition(position => {
             setLat(position.coords.latitude);
             setLong(position.coords.longitude);
+        }, () => {
+            // Riga, Latvia
+            setLat(57);
+            setLong(25);
         });
     }
 
