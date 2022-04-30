@@ -1,3 +1,5 @@
+$greyColor: #989898;
+
 .wrap {
   padding: 0 20px;
 }
@@ -10,9 +12,36 @@
 
 .weekDay {
   font-size: 20px;
-  color: #989898;
+  color: $greyColor;
 }
 
 .day {
   margin: 10px 0;
+}
+
+.mainWeather {
+  display: grid;
+  grid-template-areas:
+    "a b"
+    "c c";
+  margin: 60px 0;
+
+  .image {
+    grid-area: a;
+    justify-self: right;
+  }
+
+  .temperature {
+    font-size: 46px;
+    font-weight: 600;
+    grid-area: b;
+    align-self: center;
+  }
+
+  .weatherName {
+    grid-area: c;
+    justify-self: center;
+    color: $greyColor;
+    font-size: 20px;
+  }
 }
