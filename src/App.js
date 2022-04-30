@@ -22,7 +22,11 @@ function App() {
 
     return (
         <>
-            {(weatherData.message === 0) ? (<Weather/>) : (<Loader></Loader>)}
+            {(weatherData.message === 0) ?
+                (<Weather/>)
+                :
+                (<Loader></Loader>)
+            }
         </>
     )
 }
