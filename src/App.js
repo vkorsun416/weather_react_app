@@ -1,5 +1,6 @@
 import React, {useContext, useEffect} from "react";
 import context from "./context/context";
+import Weather from "./components/Weather/Weather";
 
 function App() {
 
@@ -16,16 +17,13 @@ function App() {
         getUserLocation();
         getWeatherData();
 
-        console.log("Latitude is:", lat)
-        console.log("Longitude is:", long)
-        console.log(process.env.WEATHER_API_URL)
     }, [lat, long]);
 
     return (
         <>
-
+            {(weatherData.message === 0) ? (<Weather/>) : (<></>)}
         </>
-    );
+    )
 }
 
 export default App;
