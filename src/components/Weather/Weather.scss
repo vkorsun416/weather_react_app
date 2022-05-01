@@ -1,47 +1,47 @@
-$greyColor: #989898;
-
 .wrap {
-  padding: 0 20px;
-}
+  padding: 0 20px 50px 20px;
+  background: rgb(111, 90, 205);
+  background: linear-gradient(0deg, rgba(111, 90, 205, 1) 0%, rgba(217, 221, 255, 1) 100%);
 
-.location {
-  font-size: 24px;
-  font-weight: 600;
-  margin: 30px 0 10px 0;
-}
+  .location {
+    font-size: 24px;
+    font-weight: 600;
+    padding: 30px 0 10px 0;
+  }
 
-.weekDay {
-  font-size: 20px;
-  color: $greyColor;
-}
+  .weekDay {
+    font-size: 20px;
+    color: #fff;
+  }
 
-.day {
-  margin: 10px 0;
-}
+  .day {
+    margin: 10px 0;
+  }
 
-.mainWeather {
-  display: grid;
-  grid-template-areas:
+  .mainWeather {
+    display: grid;
+    grid-template-areas:
     "a b"
     "c c";
-  margin: 50px 0;
+    margin: 50px 0;
 
-  .image {
-    grid-area: a;
-    justify-self: right;
-  }
+    .image {
+      grid-area: a;
+      justify-self: right;
+    }
 
-  .temperature {
-    font-size: 46px;
-    font-weight: 600;
-    grid-area: b;
-    align-self: center;
-  }
+    .temperature {
+      font-size: 46px;
+      font-weight: 600;
+      grid-area: b;
+      align-self: center;
+    }
 
-  .weatherName {
-    grid-area: c;
-    justify-self: center;
-    color: $greyColor;
-    font-size: 20px;
+    .weatherName {
+      grid-area: c;
+      justify-self: center;
+      color: #fff;
+      font-size: 20px;
+    }
   }
 }

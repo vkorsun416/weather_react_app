@@ -1,4 +1,4 @@
-$lightGrey: #a29dda;
+$lightGrey: #4183e5;
 $greyColor: #989898;
 
 .dayInfo {
@@ -7,16 +7,55 @@ $greyColor: #989898;
 }
 
 .detailWrap {
-  background-color: $lightGrey;
+  background-color: rgba(255, 255, 255, 0.49);
   display: grid;
   grid-template-columns: 20% 10% 10% 20% auto;;
   grid-template-rows: 1fr;
   align-items: center;
-  padding: 10px;
-  margin: 5px 0;
+  padding: 5px 20px;
+  margin: 5px 0 0 0;
   font-size: 14px;
+  border-radius: 20px;
 }
 
 .imageDetail {
   width: 60px;
+}
+
+.openDetails {
+  display: block;
+  padding: 20px 0;
+
+  &.hide {
+    display: none;
+    height: 0;
+  }
+
+  .date {
+    padding: 0 20px 5px 20px;
+    color: #fff;
+  }
+}
+
+.averages {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0 30px 0;
+
+  .item {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  strong {
+    font-size: 20px;
+  }
 }

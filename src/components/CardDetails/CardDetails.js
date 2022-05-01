@@ -1,5 +1,4 @@
 import React, {useContext} from 'react';
-import "./Card.scss"
 import context from "../../context/context";
 import filterDataByDay from "../../services/filterDataByDay";
 import Card from "./Card";
