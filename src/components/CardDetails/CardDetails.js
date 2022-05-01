@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import context from "../../context/context";
 import filterDataByDay from "../../services/filterDataByDay";
 import Card from "./Card";
+import "./Card.scss"
 
 function CardDetails() {
 
@@ -13,11 +14,11 @@ function CardDetails() {
     const fiveDaysForecast = dailyForecasts.length >= 5 ? dailyForecasts.slice(0, 5) : dailyForecasts;
 
     return (
-        <>
-            {fiveDaysForecast.map((item, i) => (
-                <Card data={item} index={i}/>
+        <div className={"cardWrap"}>
+            {fiveDaysForecast.map((item, index) => (
+                <Card data={item} key={index}/>
             ))}
-        </>
+        </div>
     );
 }
 

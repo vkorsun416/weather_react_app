@@ -16,7 +16,7 @@ function ApiContext(props) {
         }, () => {
             // Coordinates of Riga, Latvia
             setLat(57);
-            setLong(25);
+            setLong(24.0833);
         });
     }
 

@@ -1,9 +1,5 @@
-$lightGrey: #4183e5;
-$greyColor: #989898;
+.cardWrap {
 
-.dayInfo {
-  padding: 10px;
-  color: $greyColor;
 }
 
 .detailWrap {
@@ -20,6 +16,7 @@ $greyColor: #989898;
 
 .imageDetail {
   width: 60px;
+  justify-self: right;
 }
 
 .openDetails {
@@ -32,7 +29,7 @@ $greyColor: #989898;
   }
 
   .date {
-    padding: 0 20px 5px 20px;
+    padding: 0 10px;
     color: #fff;
   }
 }
@@ -43,7 +40,7 @@ $greyColor: #989898;
   margin: 20px 0 30px 0;
 
   .item {
-    padding: 0 20px;
+    padding: 0 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,5 +54,15 @@ $greyColor: #989898;
 
   strong {
     font-size: 20px;
+  }
+}
+
+@media all and (min-width: 768px){
+  .averages {
+    justify-content: center;
+  }
+
+  .date {
+    text-align: center;
   }
 }

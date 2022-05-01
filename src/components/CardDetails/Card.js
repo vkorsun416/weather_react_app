@@ -9,12 +9,14 @@ import 'swiper/css';
 import "./Card.scss"
 
 function Card(props) {
-    const {data, index} = props;
+    const {data} = props;
+
+    console.log(data[0].weather[0].icon)
 
     const [isOpen, setOpen] = useState(false);
 
     return (
-        <div key={index}>
+        <div key={data[0].dt}>
             <div
                 className={"detailWrap"}
                 onClick={() => setOpen(!isOpen)}
@@ -30,11 +32,11 @@ function Card(props) {
                 </p>
                 <img
                     className={"imageDetail"}
-                    src={getWeatherIcon(data[2].weather[0].icon)}
-                    alt={data[2].weather[0].icon}
+                    src={getWeatherIcon(data[Math.floor(+(data.length)/2)].weather[0].icon)}
+                    alt={data[Math.floor(+(data.length)/2)].weather[0].icon}
                 />
                 <p>
-                    {data[2].weather[0].description}
+                    {data[Math.floor(+(data.length)/2)].weather[0].description}
                 </p>
             </div>
             <div className={"openDetails" + (isOpen ? "" : " hide")}>
@@ -71,7 +73,7 @@ function Card(props) {
                     slidesPerView={4.5}
                 >
                     {data.map(item => (
-                        <SwiperSlide>
+                        <SwiperSlide key={item.dt}>
                             <p>
                                 {item.dt_txt.match(/[0-9]{2}:[0]{2}/)}
                             </p>
