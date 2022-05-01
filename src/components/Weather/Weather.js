@@ -4,6 +4,7 @@ import "./Weather.scss";
 import moment from "moment";
 import getCelsiusTemperature from "../../services/getCelsiusTemperature";
 import getWeatherIcon from "../../services/getWeatherIcon";
+import CardDetails from "../CardDetails/CardDetails";
 
 function Weather() {
     const {
@@ -25,16 +26,18 @@ function Weather() {
             <div className={"mainWeather"}>
                 <img
                     className={"image"}
-                    src={getWeatherIcon(weatherData, 0)}
+                    src={getWeatherIcon(weatherData.list[0].weather[0].icon)}
                     alt={weatherData.list[0].weather[0].main}
                 />
                 <p className={"temperature"}>
-                    {getCelsiusTemperature(weatherData)}
+                    {getCelsiusTemperature(weatherData.list[0].main.temp)}C
                 </p>
                 <p className={"weatherName"}>
                     {weatherData.list[0].weather[0].main}
                 </p>
             </div>
+
+            <CardDetails/>
 
         </div>
     );

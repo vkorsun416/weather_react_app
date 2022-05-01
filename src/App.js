@@ -25,7 +25,7 @@ function App() {
             {(weatherData.message === 0) ?
                 (<Weather/>)
                 :
-                (<Loader></Loader>)
+                (<Loader/>)
             }
         </>
     )

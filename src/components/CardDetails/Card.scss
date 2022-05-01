@@ -1,0 +1,22 @@
+$lightGrey: #a29dda;
+$greyColor: #989898;
+
+.dayInfo {
+  padding: 10px;
+  color: $greyColor;
+}
+
+.detailWrap {
+  background-color: $lightGrey;
+  display: grid;
+  grid-template-columns: 20% 10% 10% 20% auto;;
+  grid-template-rows: 1fr;
+  align-items: center;
+  padding: 10px;
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.imageDetail {
+  width: 60px;
+}
