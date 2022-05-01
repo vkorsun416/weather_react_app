@@ -20,6 +20,7 @@ function Card(props) {
             <div
                 className={"detailWrap"}
                 onClick={() => setOpen(!isOpen)}
+                title={"Show more"}
             >
                 <p>
                     {getDayOfWeek(data).slice(0, 3).toUpperCase()}
@@ -32,11 +33,12 @@ function Card(props) {
                 </p>
                 <img
                     className={"imageDetail"}
-                    src={getWeatherIcon(data[Math.floor(+(data.length)/2)].weather[0].icon)}
-                    alt={data[Math.floor(+(data.length)/2)].weather[0].icon}
+                    // Get average weather data of day
+                    src={getWeatherIcon(data[Math.floor(+(data.length) / 2)].weather[0].icon)}
+                    alt={data[Math.floor(+(data.length) / 2)].weather[0].icon}
                 />
                 <p>
-                    {data[Math.floor(+(data.length)/2)].weather[0].description}
+                    {data[Math.floor(+(data.length) / 2)].weather[0].description}
                 </p>
             </div>
             <div className={"openDetails" + (isOpen ? "" : " hide")}>
@@ -75,6 +77,7 @@ function Card(props) {
                     {data.map(item => (
                         <SwiperSlide key={item.dt}>
                             <p>
+                                {/*Get time from forecast*/}
                                 {item.dt_txt.match(/[0-9]{2}:[0]{2}/)}
                             </p>
                             <img className={"imageDetail"}

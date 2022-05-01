@@ -4,7 +4,7 @@ import filterDataByDay from "../../services/filterDataByDay";
 import Card from "./Card";
 import "./Card.scss"
 
-function CardDetails() {
+function DayCards() {
 
     const {
         weatherData,
@@ -14,12 +14,12 @@ function CardDetails() {
     const fiveDaysForecast = dailyForecasts.length >= 5 ? dailyForecasts.slice(0, 5) : dailyForecasts;
 
     return (
-        <div className={"cardWrap"}>
+        <>
             {fiveDaysForecast.map((item, index) => (
                 <Card data={item} key={index}/>
             ))}
-        </div>
+        </>
     );
 }
 
-export default CardDetails;
+export default DayCards;
